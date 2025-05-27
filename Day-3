@@ -1,0 +1,27 @@
+// String Anagram
+// "hello" -> "olleh"
+
+// condn => length check for both string
+// checking both string with letter => {h:0,e:0,l:0,o:0}
+
+function isAnagram(str1, str2){
+if(str1.length != str2.length){
+    return false
+}
+let counter = {}
+for(let letter of str1){
+    counter[letter] = (counter[letter] || 0) + 1 
+    console.log(counter[letter]);
+    
+}
+for(let items of str2){
+if(!counter[items]){
+    return false
+}
+counter[items]-=1
+}
+return true
+
+}
+let result = isAnagram('hello','llheoe')
+console.log(result);
